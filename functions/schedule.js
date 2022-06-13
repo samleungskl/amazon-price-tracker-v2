@@ -4,6 +4,7 @@ import updateData from './helpers/airtable/updateData';
 import { matchDataWithUid } from './helpers/rapidApi/matchDataWithUid';
 import { formatAsinData } from './helpers/rapidApi/formattedAsinData';
 import { formatPriceData } from './helpers/rapidApi/formattedPriceData';
+import { send_sms } from './helpers/twilio/sendSms';
 const getAmazonData = require ('./helpers/rapidApi/rapidApiGetData')
 
 
@@ -19,8 +20,9 @@ const handler = async function (event, context) {
             const cleanedAmazonAsinData = await formatAsinData(amazonJson)
             const dataWithUid = await matchDataWithUid(result.asin, cleanedAmazonAsinData)
             // console.log('dataWithUid = ', dataWithUid)
-            createData(cleanedAmazonPriceData, 'data')
-            updateData(dataWithUid, 'asin')
+            // createData(cleanedAmazonPriceData, 'data')
+            // updateData(dataWithUid, 'asin')
+            send_sms('This is a test message.')
         } catch (error) {
             console.error(error);
         }
