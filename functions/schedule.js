@@ -4,7 +4,9 @@ import updateData from './helpers/airtable/updateData';
 import { matchDataWithUid } from './helpers/rapidApi/matchDataWithUid';
 import { formatAsinData } from './helpers/rapidApi/formattedAsinData';
 import { formatPriceData } from './helpers/rapidApi/formattedPriceData';
-const getAmazonData = require ('./helpers/rapidApi/rapidApiGetData')
+import { send_sms } from './helpers/twilio/sendSms';
+import { priceNotificationLogic } from './helpers/twilio/priceNotificationLogic';
+const getAmazonData = require('./helpers/rapidApi/rapidApiGetData')
 
 
 const handler = async function (event, context) {
@@ -18,9 +20,16 @@ const handler = async function (event, context) {
             const cleanedAmazonPriceData = await formatPriceData(amazonJson)
             const cleanedAmazonAsinData = await formatAsinData(amazonJson)
             const dataWithUid = await matchDataWithUid(result.asin, cleanedAmazonAsinData)
-            // console.log('dataWithUid = ', dataWithUid)
             createData(cleanedAmazonPriceData, 'data')
             updateData(dataWithUid, 'asin')
+
+            const fectchResult = await fetch('http://localhost:8888/.netlify/functions/data')
+            const fectchResultJson = await fectchResult.json()
+            const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
+            arrayOfMessage.map((message) => {
+                send_sms(message)
+            })
+            // send_sms('This is a test message.')
         } catch (error) {
             console.error(error);
         }
