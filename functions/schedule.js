@@ -10,7 +10,6 @@ const getAmazonData = require('./helpers/rapidApi/rapidApiGetData')
 
 
 const handler = async function (event, context) {
-    // console.log("Received event:", event)
     const loadData = async () => {
 
         try {
