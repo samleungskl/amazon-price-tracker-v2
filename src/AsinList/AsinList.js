@@ -14,7 +14,7 @@ function AsinList({ asinList, dataList }) {
 
         const lowestPriceObj = sortedArrayByPrice[0]
         const lastElementOfArray = sortedArrayByPrice.length - 1
-        const HighestPriceObj = sortedArrayByPrice[lastElementOfArray]
+        const highestPriceObj = sortedArrayByPrice[lastElementOfArray]
         const lengthOfElement = sortedArrayByPrice.length
         const priceOnlyArray = filteredData.map((element) => {
             return element.dataPrice
@@ -31,7 +31,7 @@ function AsinList({ asinList, dataList }) {
             asinImageUrl={element.asinImageUrl}
             asinLastUpdate={element.asinLastUpdate}
             asinName={element.asinName} />
-            <PriceAnalysis lowestPrice={lowestPriceObj.dataPrice} HighestPrice={HighestPriceObj.dataPrice} averagePrice={averagePrice}/>
+            <PriceAnalysis lowestPriceObj={lowestPriceObj} highestPriceObj={highestPriceObj} averagePrice={averagePrice}/>
             <PriceHistoryTable dataArray={filteredData} />
         </div>
     })
