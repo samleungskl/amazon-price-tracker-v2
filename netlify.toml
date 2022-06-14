@@ -5,5 +5,8 @@
     to= ".netlify/functions/:splat"
     status = 200
 
+[functions."schedule"]
+schedule = "@daily"
+
 [functions]
   node_bundler = "esbuild"

@@ -1,4 +1,3 @@
-const { schedule } = require('@netlify/functions')
 import fetch from 'node-fetch';
 import createData from './helpers/airtable/createData';
 import updateData from './helpers/airtable/updateData';
@@ -29,7 +28,7 @@ const handler = async function (event, context) {
             arrayOfMessage.map((message) => {
                 send_sms(message)
             })
-            
+            // send_sms('This is a test message.')
         } catch (error) {
             console.error(error);
         }
@@ -40,5 +39,4 @@ const handler = async function (event, context) {
     };
 };
 
-mmodule.exports.handler = schedule("@daily", handler);
-
+module.exports.handler = handler;
