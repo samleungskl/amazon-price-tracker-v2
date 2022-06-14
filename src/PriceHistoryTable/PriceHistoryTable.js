@@ -1,5 +1,6 @@
 import './PriceHistoryTable.scss';
 import PriceHistoryTableItem from './PriceHistoryTableItem';
+import PriceAnalysis from '../PriceAnalysis/PriceAnalysis';
 function priceHistoryTable({ dataArray }) {
     const result = dataArray.map((element) => {
         return <PriceHistoryTableItem dataDate={element.dataCreatedDate} dataPrice={element.dataPrice} key={element.dataUid} />
