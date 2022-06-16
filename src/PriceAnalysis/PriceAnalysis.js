@@ -1,11 +1,10 @@
 import './PriceAnalysis.scss';
-function PriceAnalysis({ highestPriceObj, lowestPriceObj, averagePrice }) {
-    console.log('lowestPriceObj = ', lowestPriceObj)
+function PriceAnalysis({ asinPriceMin, asinPriceMax, asinPriceMean }) {
     return (
         <div className="PriceAnalysis">
-            <div>Lowest: ${lowestPriceObj.dataPrice} on {lowestPriceObj.dataCreatedDate}</div>
-            <div>Highest: ${highestPriceObj.dataPrice} on {lowestPriceObj.dataCreatedDate}</div>
-            <div>Average: ${averagePrice}</div>
+            <div>Min: ${asinPriceMin}</div>
+            <div>Max: ${asinPriceMax}</div>
+            <div>Mean: ${asinPriceMean}</div>
         </div>
     );
 }
