@@ -16,7 +16,7 @@ const send_sms = function (messageArray) {
             })
             .then(message => {
                 console.log(message.sid)
-                console.log(`Message sent to : ${message.to} | Content : ${message.body}`)
+                console.log(`Message sent`)
             })
             .done();
     })
