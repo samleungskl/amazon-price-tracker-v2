@@ -25,10 +25,7 @@ const handler = async function (event, context) {
             const fectchResult = await fetch('http://localhost:8888/.netlify/functions/data')
             const fectchResultJson = await fectchResult.json()
             const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
-            arrayOfMessage.map((message) => {
-                send_sms(message)
-            })
-            // send_sms('This is a test message.')
+            send_sms(arrayOfMessage)
         } catch (error) {
             console.error(error);
         }
