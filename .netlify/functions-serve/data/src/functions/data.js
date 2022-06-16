@@ -6217,10 +6217,20 @@ var require_getData = __commonJS({
         const asinArray = extractedData[0].map((element) => {
           return element.asin;
         });
+        const extractedPriceDataArray = extractedData[1].map((element) => {
+          element.dataAsin = element.dataAsin.toString();
+          return element;
+        });
+        const asinWithPriceData = extractedData[0].map((asinElement) => {
+          const result2 = extractedPriceDataArray.filter((dataElement) => {
+            return dataElement.dataAsin === asinElement.asinUid;
+          });
+          asinElement.data = result2;
+          return asinElement;
+        });
         const result = {
           asinArray,
-          asin: extractedData[0],
-          data: extractedData[1]
+          asin: asinWithPriceData
         };
         return formattedReturn(200, result);
       } catch (err) {

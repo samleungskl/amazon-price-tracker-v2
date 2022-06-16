@@ -4,7 +4,6 @@ export default function useApplicationData() {
     const [state, setState] = useState({
         asinArray: [],
         asin: [],
-        data: [],
     });
 
     const loadData = async () => {
@@ -15,7 +14,6 @@ export default function useApplicationData() {
                 ...prev,
                 asinArray: result.asinArray,
                 asin: result.asin,
-                data: result.data,
             }));
         } catch (error) {
             console.error(error);
