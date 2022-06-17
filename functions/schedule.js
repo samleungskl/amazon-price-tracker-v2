@@ -11,28 +11,22 @@ const getAmazonData = require('./helpers/rapidApi/rapidApiGetData')
 
 const handler = async function (event, context) {
     try {
-        const res = await fetch('http://localhost:8888/.netlify/functions/data')
-        // const result = await res.json()
-        // const amazonJson = await getAmazonData(result.asinArray)
-        // const amazonDataWithAsinUid = await addAsinUidToData(amazonJson, result.asin)
-        // console.log('amazonDataWithAsinUid = ', amazonDataWithAsinUid)
-        // const cleanedAmazonAsinData = await formatAsinData(amazonJson)
-        // updateData(cleanedAmazonAsinData, 'asin')
+        const res = await fetch('https://samskleung-amazon-tracker.netlify.app/.netlify/functions/data')
+        const result = await res.json()
+        const amazonJson = await getAmazonData(result.asinArray)
+        const amazonDataWithAsinUid = await addAsinUidToData(amazonJson, result.asin)
+        console.log('amazonDataWithAsinUid = ', amazonDataWithAsinUid)
+        const cleanedAmazonAsinData = await formatAsinData(amazonJson)
+        updateData(cleanedAmazonAsinData, 'asin')
 
-        // const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
-        // const testData = [{
-        //     "fields": {
-        //         dataPrice: 12.99,
-        //         dataAsin: ['recd2CCXBc7Gr2g4z'],
-        //     }
-        // }]
-        // createData(testData, 'data')
+        const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
+        createData(testData, 'data')
 
-        // const fectchResult = await fetch('http://localhost:8888/.netlify/functions/data')
-        // const fectchResultJson = await fectchResult.json()
-        // const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
-        // console.log('arrayOfMessage = ', arrayOfMessage)
-        // send_sms(arrayOfMessage)
+        const fectchResult = await fetch('https://samskleung-amazon-tracker.netlify.app/.netlify/functions/data')
+        const fectchResultJson = await fectchResult.json()
+        const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
+        console.log('arrayOfMessage = ', arrayOfMessage)
+        send_sms(arrayOfMessage)
     } catch (error) {
         console.error(error);
     }
