@@ -20,7 +20,7 @@ const handler = async function (event, context) {
         updateData(cleanedAmazonAsinData, 'asin')
 
         const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
-        createData(testData, 'data')
+        createData(cleanedAmazonPriceData, 'data')
 
         const fectchResult = await fetch('https://samskleung-amazon-tracker.netlify.app/.netlify/functions/data')
         const fectchResultJson = await fectchResult.json()
