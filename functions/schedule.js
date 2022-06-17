@@ -10,30 +10,33 @@ const getAmazonData = require('./helpers/rapidApi/rapidApiGetData')
 
 
 const handler = async function (event, context) {
-    const loadData = async () => {
+    try {
+        // const res = await fetch('http://localhost:8888/.netlify/functions/data')
+        // const result = await res.json()
+        // const amazonJson = await getAmazonData(result.asinArray)
+        // const amazonDataWithAsinUid = await addAsinUidToData(amazonJson, result.asin)
+        // console.log('amazonDataWithAsinUid = ', amazonDataWithAsinUid)
+        // const cleanedAmazonAsinData = await formatAsinData(amazonJson)
+        // updateData(cleanedAmazonAsinData, 'asin')
 
-        try {
-            const res = await fetch('http://localhost:8888/.netlify/functions/data')
-            const result = await res.json()
-            const amazonJson = await getAmazonData(result.asinArray)
-            const amazonDataWithAsinUid = await addAsinUidToData(amazonJson, result.asin)
-            console.log('amazonDataWithAsinUid = ', amazonDataWithAsinUid)
-            const cleanedAmazonAsinData = await formatAsinData(amazonJson)
-            updateData(cleanedAmazonAsinData, 'asin')
-
-            const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
-            createData(cleanedAmazonPriceData, 'data')
-
-            const fectchResult = await fetch('http://localhost:8888/.netlify/functions/data')
-            const fectchResultJson = await fectchResult.json()
-            const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
-            console.log('arrayOfMessage = ', arrayOfMessage)
-            send_sms(arrayOfMessage)
-        } catch (error) {
-            console.error(error);
+        // const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
+        const testData = {
+            "fields": {
+                dataPrice: 12.99,
+                dataAsin: ['recd2CCXBc7Gr2g4z'],
+            }
         }
+        createData(testData, 'data')
+
+        // const fectchResult = await fetch('http://localhost:8888/.netlify/functions/data')
+        // const fectchResultJson = await fectchResult.json()
+        // const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
+        // console.log('arrayOfMessage = ', arrayOfMessage)
+        // send_sms(arrayOfMessage)
+    } catch (error) {
+        console.error(error);
     }
-    loadData()
+
     return {
         statusCode: 200,
     };
