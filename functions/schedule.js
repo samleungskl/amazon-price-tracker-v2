@@ -11,13 +11,13 @@ const getAmazonData = require('./helpers/rapidApi/rapidApiGetData')
 
 const handler = async function (event, context) {
     try {
-        const res = await fetch('http://localhost:8888/.netlify/functions/data')
-        // const result = await res.json()
-        // const amazonJson = await getAmazonData(result.asinArray)
-        // const amazonDataWithAsinUid = await addAsinUidToData(amazonJson, result.asin)
-        // console.log('amazonDataWithAsinUid = ', amazonDataWithAsinUid)
-        // const cleanedAmazonAsinData = await formatAsinData(amazonJson)
-        // updateData(cleanedAmazonAsinData, 'asin')
+        const res = await fetch('https://samskleung-amazon-tracker.netlify.app/.netlify/functions/data')
+        const result = await res.json()
+        const amazonJson = await getAmazonData(result.asinArray)
+        const amazonDataWithAsinUid = await addAsinUidToData(amazonJson, result.asin)
+        console.log('amazonDataWithAsinUid = ', amazonDataWithAsinUid)
+        const cleanedAmazonAsinData = await formatAsinData(amazonJson)
+        updateData(cleanedAmazonAsinData, 'asin')
 
         // const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
         // const testData = [{
