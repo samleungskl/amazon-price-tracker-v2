@@ -2,6 +2,7 @@
 const formatAsinData = (returnedAmazonData) => {
     return returnedAmazonData.map((element) => {
         return {
+            "id": element.asinUid,
             "fields": {
                 asin: element.asin,
                 asinName: element.product_name,
