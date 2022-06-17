@@ -20,12 +20,12 @@ const handler = async function (event, context) {
         // updateData(cleanedAmazonAsinData, 'asin')
 
         // const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
-        const testData = {
+        const testData = [{
             "fields": {
                 dataPrice: 12.99,
                 dataAsin: ['recd2CCXBc7Gr2g4z'],
             }
-        }
+        }]
         createData(testData, 'data')
 
         // const fectchResult = await fetch('http://localhost:8888/.netlify/functions/data')
