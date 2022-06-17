@@ -4,7 +4,7 @@ const formatPriceData = (returnedAmazonData) => {
         return {
             "fields": {
                 dataPrice: element.current_price,
-                dataAsin: element.asin,
+                dataAsin: [element.asinUid],
             }
         }
     })
