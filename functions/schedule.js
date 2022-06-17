@@ -17,7 +17,7 @@ const handler = async function (event, context) {
             const result = await res.json()
             const amazonJson = await getAmazonData(result.asinArray)
             const amazonDataWithAsinUid = await addAsinUidToData(amazonJson, result.asin)
-
+            console.log('amazonDataWithAsinUid = ', amazonDataWithAsinUid)
             const cleanedAmazonAsinData = await formatAsinData(amazonJson)
             updateData(cleanedAmazonAsinData, 'asin')
 
@@ -27,7 +27,8 @@ const handler = async function (event, context) {
             const fectchResult = await fetch('http://localhost:8888/.netlify/functions/data')
             const fectchResultJson = await fectchResult.json()
             const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
-            // send_sms(arrayOfMessage)
+            console.log('arrayOfMessage = ', arrayOfMessage)
+            send_sms(arrayOfMessage)
         } catch (error) {
             console.error(error);
         }
