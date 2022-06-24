@@ -6,11 +6,11 @@ function PriceAnalysis({ asinArray }) {
     return (
         <div className="PriceAnalysis">
             <h3>Price Analysis for {asinArray.asin}</h3>
+            <LineChart dataArray={asinArray.data} asin={asinArray.asin}/>
             <div>Min: ${asinArray.asinPriceMin}</div>
             <div>Max: ${asinArray.asinPriceMax}</div>
             <div>Mean: ${asinArray.asinPriceMean}</div>
-            <LineChart/>
-            <PriceHistoryTable dataArray={asinArray.data} />
+            <PriceHistoryTable dataArray={asinArray.data}/>
         </div>
     );
 }
