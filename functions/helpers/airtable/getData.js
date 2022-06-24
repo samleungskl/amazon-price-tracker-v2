@@ -38,7 +38,13 @@ module.exports = async (event) => {
         })
 
         const meanWithTwoDigit = asinWithPriceData.map((element)=>{
+            const isMeanNaN = isNaN(element.asinPriceMean)
+            if (!isMeanNaN){
             element.asinPriceMean = element.asinPriceMean.toFixed(2)
+            } else {
+                element.asinPriceMean = 0
+            }
+
             return element
         });
 

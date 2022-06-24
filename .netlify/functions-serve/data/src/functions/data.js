@@ -6195,7 +6195,12 @@ var require_getData = __commonJS({
           return asinElement;
         });
         const meanWithTwoDigit = asinWithPriceData.map((element) => {
-          element.asinPriceMean = element.asinPriceMean.toFixed(2);
+          const isMeanNaN = isNaN(element.asinPriceMean);
+          if (!isMeanNaN) {
+            element.asinPriceMean = element.asinPriceMean.toFixed(2);
+          } else {
+            element.asinPriceMean = 0;
+          }
           return element;
         });
         const result = {
