@@ -5729,41 +5729,20 @@ var require_exponential_backoff_with_jitter = __commonJS({
 var require_package = __commonJS({
   "node_modules/airtable/package.json"(exports2, module2) {
     module2.exports = {
-      _from: "airtable@^0.11.4",
-      _id: "airtable@0.11.4",
-      _inBundle: false,
-      _integrity: "sha512-y8sEi/sMEdgtgvv0V8AhJyFQB9za+6qGIxllt60Ey5ELBgu+bNEc1hjY2aqzp9C38p0ORfaeRS5RSFWlcq11Aw==",
-      _location: "/airtable",
-      _phantomChildren: {
-        "whatwg-url": "5.0.0"
+      name: "airtable",
+      version: "0.11.4",
+      license: "MIT",
+      homepage: "https://github.com/airtable/airtable.js",
+      repository: "git://github.com/airtable/airtable.js.git",
+      private: false,
+      scripts: {
+        pretest: "npm run lint && npm run prepare && cp build/airtable.browser.js test/test_files; true",
+        lint: "eslint '*/**/*.{js,ts,tsx}'",
+        format: "prettier --write '**/*.[j|t]s'",
+        test: "jest --env node --coverage --no-cache",
+        "test-unit": "jest --env node",
+        prepare: "rm -rf lib/* && rm -f build/airtable.browser.js && tsc && cp lib/airtable.js lib/tmp_airtable.js && grunt browserify && rm lib/tmp_airtable.js"
       },
-      _requested: {
-        type: "range",
-        registry: true,
-        raw: "airtable@^0.11.4",
-        name: "airtable",
-        escapedName: "airtable",
-        rawSpec: "^0.11.4",
-        saveSpec: null,
-        fetchSpec: "^0.11.4"
-      },
-      _requiredBy: [
-        "/"
-      ],
-      _resolved: "https://registry.npmjs.org/airtable/-/airtable-0.11.4.tgz",
-      _shasum: "1f8bef44c82a185f05655fc5e9c9563b1ee775ec",
-      _spec: "airtable@^0.11.4",
-      _where: "/Users/samleung/dev-folder/amazon-price-tracker-v2",
-      browser: {
-        "node-fetch": false,
-        "abort-controller": false,
-        "./lib/airtable.js": "./lib/airtable.umd.js",
-        "./lib/package_version": "./lib/package_version_browser"
-      },
-      bugs: {
-        url: "https://github.com/airtable/airtable.js/issues"
-      },
-      bundleDependencies: false,
       dependencies: {
         "@types/node": ">=8.0.0 <15",
         "abort-controller": "^3.0.0",
@@ -5771,8 +5750,31 @@ var require_package = __commonJS({
         lodash: "^4.17.21",
         "node-fetch": "^2.6.7"
       },
-      deprecated: false,
-      description: "The official Airtable JavaScript library.",
+      main: "./lib/airtable.js",
+      types: "./lib/airtable.d.ts",
+      browser: {
+        "node-fetch": false,
+        "abort-controller": false,
+        "./lib/airtable.js": "./lib/airtable.umd.js",
+        "./lib/package_version": "./lib/package_version_browser"
+      },
+      files: [
+        "/README.md",
+        "/CHANGELOG.md",
+        "/LICENSE.txt",
+        "/build/airtable.browser.js",
+        "/lib/"
+      ],
+      jest: {
+        coverageThreshold: {
+          global: {
+            branches: 100,
+            functions: 100,
+            lines: 100,
+            statements: 100
+          }
+        }
+      },
       devDependencies: {
         "@types/jest": "^26.0.3",
         "@types/lodash": "^4.14.157",
@@ -5792,51 +5794,15 @@ var require_package = __commonJS({
         semver: "^6.3.0",
         typescript: "^3.9.5"
       },
-      engines: {
-        node: ">=8.0.0"
-      },
-      files: [
-        "/README.md",
-        "/CHANGELOG.md",
-        "/LICENSE.txt",
-        "/build/airtable.browser.js",
-        "/lib/"
-      ],
-      homepage: "https://github.com/airtable/airtable.js",
-      jest: {
-        coverageThreshold: {
-          global: {
-            branches: 100,
-            functions: 100,
-            lines: 100,
-            statements: 100
-          }
-        }
-      },
       keywords: [
         "airtable",
         "productivity",
         "database",
         "spreadsheet"
       ],
-      license: "MIT",
-      main: "./lib/airtable.js",
-      name: "airtable",
-      private: false,
-      repository: {
-        type: "git",
-        url: "git://github.com/airtable/airtable.js.git"
-      },
-      scripts: {
-        format: "prettier --write '**/*.[j|t]s'",
-        lint: "eslint '*/**/*.{js,ts,tsx}'",
-        prepare: "rm -rf lib/* && rm -f build/airtable.browser.js && tsc && cp lib/airtable.js lib/tmp_airtable.js && grunt browserify && rm lib/tmp_airtable.js",
-        pretest: "npm run lint && npm run prepare && cp build/airtable.browser.js test/test_files; true",
-        test: "jest --env node --coverage --no-cache",
-        "test-unit": "jest --env node"
-      },
-      types: "./lib/airtable.d.ts",
-      version: "0.11.4"
+      engines: {
+        node: ">=8.0.0"
+      }
     };
   }
 });
