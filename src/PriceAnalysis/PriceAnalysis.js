@@ -1,5 +1,6 @@
+import LineChart from './LineChart/LineChart';
 import './PriceAnalysis.scss';
-import PriceHistoryTable from '../PriceHistoryTable/PriceHistoryTable';
+import PriceHistoryTable from './PriceHistoryTable/PriceHistoryTable';
 
 function PriceAnalysis({ asinArray }) {
     return (
@@ -8,6 +9,7 @@ function PriceAnalysis({ asinArray }) {
             <div>Min: ${asinArray.asinPriceMin}</div>
             <div>Max: ${asinArray.asinPriceMax}</div>
             <div>Mean: ${asinArray.asinPriceMean}</div>
+            <LineChart/>
             <PriceHistoryTable dataArray={asinArray.data} />
         </div>
     );
