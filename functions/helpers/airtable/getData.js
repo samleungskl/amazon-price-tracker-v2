@@ -36,9 +36,15 @@ module.exports = async (event) => {
             asinElement.data = result
             return asinElement
         })
+
+        const meanWithTwoDigit = asinWithPriceData.map((element)=>{
+            element.asinPriceMean = element.asinPriceMean.toFixed(2)
+            return element
+        });
+
         const result ={
             asinArray: asinArray,
-            asin: asinWithPriceData,
+            asin: meanWithTwoDigit,
         }
         return formattedReturn(200, result);
     } catch (err) {
