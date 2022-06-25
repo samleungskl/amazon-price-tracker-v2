@@ -1,3 +1,26 @@
 .App {
   text-align: center;
 }
+
+
+// Inspired by airtable link color
+a {
+  font-weight: 600;
+  text-decoration:none;
+}
+
+a:link {
+  color: #2d7ff9;
+}
+
+a:visited {
+  color: #2d7ff9;
+}
+
+a:hover {
+  color: #054ebb;
+}
+
+a:active {
+  color: #2d7ff9;
+}

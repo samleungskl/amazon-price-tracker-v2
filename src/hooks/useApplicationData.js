@@ -24,9 +24,27 @@ export default function useApplicationData() {
         loadData();
     }, []);
 
+    const changeAsinVisible = (asin) => {
+        const asinWithChangedState = state.asin.map((element)=>{
+            if (element.asin === asin){
+                if (element.asinVisible === true){
+                    element.asinVisible = false
+                } else {
+                    element.asinVisible = true
+                }
+                return element
+            }
+            return element
+        })
+
+        setState(prev => ({
+            ...prev,
+            asin: asinWithChangedState,
+        }));
+    }
 
     return {
-        state, loadData
+        state, loadData, changeAsinVisible
     };
 }
 

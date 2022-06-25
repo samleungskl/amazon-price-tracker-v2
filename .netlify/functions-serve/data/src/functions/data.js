@@ -6203,9 +6203,13 @@ var require_getData = __commonJS({
           }
           return element;
         });
+        const addBtnState = meanWithTwoDigit.map((element) => {
+          element.asinVisible = false;
+          return element;
+        });
         const result = {
           asinArray,
-          asin: meanWithTwoDigit
+          asin: addBtnState
         };
         return formattedReturn(200, result);
       } catch (err) {
