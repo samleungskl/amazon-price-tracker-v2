@@ -44,13 +44,17 @@ module.exports = async (event) => {
             } else {
                 element.asinPriceMean = 0
             }
-
             return element
         });
 
+        const addBtnState = meanWithTwoDigit.map((element)=>{
+            element.asinVisible = false
+            return element
+        })
+
         const result ={
             asinArray: asinArray,
-            asin: meanWithTwoDigit,
+            asin: addBtnState,
         }
         return formattedReturn(200, result);
     } catch (err) {

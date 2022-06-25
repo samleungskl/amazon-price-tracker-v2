@@ -1,7 +1,7 @@
 import './AsinListItem.scss';
 import PriceAnalysis from '../PriceAnalysis/PriceAnalysis';
 
-function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray}) {
+function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray, changeAsinVisibleFn}) {
     const isBuyNow = asinDesiredPrice >= asinCurrentPrice
     return (
         <div className="AsinListItem">
@@ -12,7 +12,7 @@ function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, a
             <div>Current Price: ${asinCurrentPrice}</div>
             <div>Target Price: ${asinDesiredPrice}</div>
             <div>Last updated: {asinLastUpdate}</div>
-            <PriceAnalysis asinArray={asinArray}/>
+            <PriceAnalysis asinArray={asinArray} changeAsinVisibleFn={changeAsinVisibleFn}/>
         </div>
     );
 }
