@@ -7,8 +7,8 @@ function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, a
             <img src={asinImageUrl} className='image'></img>
             <div className='allInfoContainer'>
                 <div className='asinContainer'>
-                    <div className='asin'>{asin}</div>
-                    <div className='asinName'>{asinName}</div>
+                    <a className='asin' href={asinFullUrl}>{asin}</a>
+                    <a className='asinName' href={asinFullUrl}>{asinName}</a>
                 </div>
                 <div>
                     <div className='priceInfoContainer'>
@@ -18,7 +18,7 @@ function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, a
                     <div className='lastUpdatedDate'>{asinLastUpdate}</div>
                     <div className='buttonContainer'>
                         <button className='priceAnalysisBtn'>Price Analysis</button>
-                        <button className='BuyBtn' href={asinFullUrl} >DO NOT BUY</button>
+                        <a className='BuyBtn' href={asinFullUrl} >DO NOT BUY</a>
                     </div>
                 </div>
             </div>

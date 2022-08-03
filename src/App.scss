@@ -9,6 +9,17 @@
   font-weight: 700;
 }
 
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
 @media only screen and (min-width: 768px) {
   .App {
     padding: 72px 48px 72px 48px;
