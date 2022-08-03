@@ -1,8 +1,7 @@
-.AsinListItem{
+.AsinListItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
     border-style: none;
     border-radius: 20px;
     background-color: white;
@@ -10,7 +9,7 @@
     margin-bottom: 16px;
 }
 
-.image{
+.image {
     max-width: 200px;
     display: flex;
     flex-direction: column;
@@ -18,7 +17,7 @@
     margin: 8px;
 }
 
-.asin{
+.asin {
     display: flex;
     align-items: flex-start;
     font-weight: 900;
@@ -26,14 +25,14 @@
     width: 100%;
 }
 
-.asinName{
+.asinName {
     display: flex;
     font-weight: 500;
     font-size: 12px;
     color: #7A7A7A;
 }
 
-.buttonContainer{
+.buttonContainer {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -41,7 +40,7 @@
     margin-top: 8px;
 }
 
-.priceAnalysisBtn{
+.priceAnalysisBtn {
     display: flex;
     justify-content: center;
     padding: 12px 16px 12px 16px;
@@ -50,31 +49,33 @@
     background-color: white;
     border-radius: 12px;
     font-weight: 900;
-    font-size: 12px;
-    width: 120px;
+    font-size: 14px;
+    width: 140px;
 }
 
-.BuyBtn{
+.BuyBtn {
     display: flex;
     justify-content: center;
     padding: 12px 16px 12px 16px;
     border: none;
     color: white;
     background-color: #5D57C6;
-    background-image: linear-gradient(to right, #4776E6 , #8E54E9);
+    background-image: linear-gradient(to right, #4776E6, #8E54E9);
     border-radius: 12px;
     font-weight: 900;
-    font-size: 12px;
-    width: 120px;
+    font-size: 14px;
+    width: 140px;
 }
 
-.priceInfoContainer{
+.priceInfoContainer {
     display: flex;
     flex-direction: row;
     margin: 8px 8px 0px 8px;
 }
 
-.currentPrice{
+.currentPrice {
+    display: flex;
+    justify-content: flex-end;
     color: #5D57C6;
     font-weight: 600;
     font-size: 16px;
@@ -82,7 +83,9 @@
     width: 50%;
 }
 
-.targetPrice{
+.targetPrice {
+    display: flex;
+    justify-content: flex-start;
     color: #5D57C6;
     font-weight: 600;
     font-size: 16px;
@@ -90,8 +93,38 @@
     width: 50%;
 }
 
-.lastUpdatedDate{
+.lastUpdatedDate {
+    display: flex;
+    justify-content: center;
     font-weight: 300;
     font-size: 12px;
     margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+    .AsinListItem {
+        flex-direction: row;
+    }
+
+    .buttonContainer {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .AsinListItem {
+        flex-direction: row;
+        max-width: 929px;
+    }
+
+    .buttonContainer {
+        justify-content: center;
+    }
+    .allInfoContainer {
+        display: flex;
+        flex-direction: row;
+    }
+    .image {
+        max-width: 125px;
+    }
 }
