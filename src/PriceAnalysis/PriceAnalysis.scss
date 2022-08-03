@@ -1,8 +1,12 @@
 .PriceAnalysis {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+.backButtonContainer{
+    width: 100%;
+}
 .backButton {
     background-color: white;
     color: #5D57C6;

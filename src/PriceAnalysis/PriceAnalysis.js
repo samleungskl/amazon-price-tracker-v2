@@ -7,7 +7,9 @@ function PriceAnalysis({ asinArray, changeValueFn, priceAnalysisTab }) {
     console.log(asinArray)
     return (
         <div className="PriceAnalysis">
+            <div className='backButtonContainer'>
             <a className='backButton' onClick={() => { changeValueFn('currentPage', 'home') }}>Back</a>
+            </div>
             <div className='asinInfoContainer'>
                 <div className='asinNameFromAnalysis'>{asinArray.asinName}</div>
             </div>
