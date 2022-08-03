@@ -44,33 +44,51 @@
 .priceAnalysisBtn {
     display: flex;
     justify-content: center;
-    padding: 12px 16px 12px 16px;
+    padding: 12px 12px 12px 12px;
     border: none;
     color: #5D57C6;
     background-color: white;
     border-radius: 12px;
     font-weight: 900;
-    font-size: 14px;
-    max-width: 120px;
+    font-size: 12px;
+    width: 100px;
 }
 
-.BuyBtn {
+.buyNowBtn {
     display: flex;
     justify-content: center;
-    padding: 12px 16px 12px 16px;
+    padding: 12px 12px 12px 12px;
+    border: none;
+    color: white;
+    background-color: #5D57C6;
+    background-image: linear-gradient(to right, #00B09B, #96C93D);
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 12px;
+    width: 100px;
+    box-shadow: 0px 4px 4px rgba(95, 86, 255, 0.25);
+}
+
+.doNotBuyBtn {
+    display: flex;
+    justify-content: center;
+    padding: 12px 12px 12px 12px;
     border: none;
     color: white;
     background-color: #5D57C6;
     background-image: linear-gradient(to right, #4776E6, #8E54E9);
     border-radius: 12px;
     font-weight: 900;
-    font-size: 14px;
-    max-width: 120px;
+    font-size: 12px;
+    width: 100px;
     box-shadow: 0px 4px 4px rgba(95, 86, 255, 0.25);
 }
+.doNotBuyBtn:hover {
+    background-image: linear-gradient(to right, #3f68c7, #7c49cd);
+}
 
-.BuyBtn:hover {
-    background-image: linear-gradient(to right, #385eb6, #8E54E9);
+.buyNowBtn:hover {
+    background-image: linear-gradient(to right, #008a7a, #7da933);
 }
 
 .priceInfoContainer {
@@ -106,13 +124,24 @@
     font-size: 12px;
     margin-bottom: 8px;
 }
+
 @media only screen and (min-width: 375px) {
-    .BuyBtn {
+    .buyNowBtn {
         width: 120px;
+        font-size: 14px;
+        padding: 12px 16px 12px 16px;
+    }
+
+    .doNotBuyBtn {
+        width: 120px;
+        font-size: 14px;
+        padding: 12px 16px 12px 16px;
     }
 
     .priceAnalysisBtn {
         width: 120px;
+        font-size: 14px;
+        padding: 12px 16px 12px 16px;
     }
 }
 
