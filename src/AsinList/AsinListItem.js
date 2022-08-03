@@ -1,7 +1,7 @@
 import './AsinListItem.scss';
 import PriceAnalysis from '../PriceAnalysis/PriceAnalysis';
 
-function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray, changeAsinVisibleFn }) {
+function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray, changeAsinVisibleFn, changeValueFn }) {
     return (
         <div className="AsinListItem">
             <img src={asinImageUrl} className='image'></img>
@@ -10,6 +10,7 @@ function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, a
                     <a className='asin' href={asinFullUrl}>{asin}</a>
                     <a className='asinName' href={asinFullUrl}>{asinName}</a>
                 </div>
+
                 <div>
                     <div className='priceInfoContainer'>
                         <div className='currentPrice'>Current<br></br>${asinCurrentPrice}</div>
@@ -17,12 +18,12 @@ function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, a
                     </div>
                     <div className='lastUpdatedDate'>{asinLastUpdate}</div>
                     <div className='buttonContainer'>
-                        <button className='priceAnalysisBtn'>Price Analysis</button>
+                        <a className='priceAnalysisBtn' onClick={()=>{changeValueFn('currentPage','priceAnalysis'); changeValueFn('selectedRecord', asinArray)}}>Price Analysis</a>
                         <a className='BuyBtn' href={asinFullUrl} >DO NOT BUY</a>
                     </div>
                 </div>
+
             </div>
-            {/* <PriceAnalysis asinArray={asinArray} changeAsinVisibleFn={changeAsinVisibleFn} /> */}
         </div>
     );
 }

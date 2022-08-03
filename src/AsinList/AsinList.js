@@ -1,6 +1,6 @@
 import './AsinList.scss';
 import AsinListItem from './AsinListItem';
-function AsinList({ asinList, changeAsinVisibleFn }) {
+function AsinList({ asinList, changeAsinVisibleFn, changeValueFn }) {
     const result = asinList.map((element, index) => {
         return <div className="AsinList" key={element.asinUid}>
             <AsinListItem
@@ -12,7 +12,8 @@ function AsinList({ asinList, changeAsinVisibleFn }) {
             asinLastUpdate={element.asinLastUpdate}
             asinName={element.asinName} 
             asinArray={element}
-            changeAsinVisibleFn={changeAsinVisibleFn}/>
+            changeAsinVisibleFn={changeAsinVisibleFn}
+            changeValueFn={changeValueFn}/>
         </div>
     })
     return (

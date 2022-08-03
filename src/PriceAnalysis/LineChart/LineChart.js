@@ -54,7 +54,7 @@ function LineChart({dataArray, asin}) {
 
     return (
         <div className="LineChart">
-        <Line options={options} data={data} height={500}/>
+        <Line options={options} data={data} height={200}/>
         </div>
     );
 }
