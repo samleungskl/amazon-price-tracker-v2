@@ -2,6 +2,7 @@ import './AsinListItem.scss';
 import PriceAnalysis from '../PriceAnalysis/PriceAnalysis';
 
 function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray, changeAsinVisibleFn, changeValueFn }) {
+    const isBuyNow = asinDesiredPrice >= asinCurrentPrice
     return (
         <div className="AsinListItem">
             <img src={asinImageUrl} className='image'></img>
@@ -19,7 +20,8 @@ function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, a
                     <div className='lastUpdatedDate'>{asinLastUpdate}</div>
                     <div className='buttonContainer'>
                         <a className='priceAnalysisBtn' onClick={()=>{changeValueFn('currentPage','priceAnalysis'); changeValueFn('selectedRecord', asinArray)}}>Price Analysis</a>
-                        <a className='BuyBtn' href={asinFullUrl} >DO NOT BUY</a>
+                        {isBuyNow === true && <a className='buyNowBtn' href={asinFullUrl} >BUY NOW!</a>}
+                        {isBuyNow === false && <a className='doNotBuyBtn' href={asinFullUrl} >DO NOT BUY</a>}
                     </div>
                 </div>
 
