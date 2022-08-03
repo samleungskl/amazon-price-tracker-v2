@@ -66,6 +66,11 @@
     font-weight: 900;
     font-size: 14px;
     width: 140px;
+    box-shadow: 0px 4px 4px rgba(95, 86, 255, 0.25);
+}
+
+.BuyBtn:hover{
+    background-image: linear-gradient(to right, #385eb6, #6c40b1);
 }
 
 .priceInfoContainer {
