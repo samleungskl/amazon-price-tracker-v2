@@ -13,11 +13,7 @@
     display: flex;
     justify-content: center;
     border-radius: 12px;
-}
-
-.priceAnaylsisBtn {
-    color: #2d7ff9;
-    font-size: large;
+    cursor: pointer;
 }
 
 .tabButton {
@@ -31,6 +27,7 @@
     justify-content: center;
     border-radius: 12px;
     margin: 8px;
+    cursor: pointer;
 }
 
 .tabButtonsContainer {
