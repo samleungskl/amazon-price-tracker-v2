@@ -2,7 +2,7 @@ import './AsinList.scss';
 import AsinListItem from './AsinListItem';
 function AsinList({ asinList, changeAsinVisibleFn }) {
     const result = asinList.map((element, index) => {
-        return <div className="AsinListAndTable" key={element.asinUid}>
+        return <div className="AsinList" key={element.asinUid}>
             <AsinListItem
             asin={element.asin}
             asinCurrentPrice={element.asinCurrentPrice}
@@ -17,6 +17,7 @@ function AsinList({ asinList, changeAsinVisibleFn }) {
     })
     return (
         <div className="AsinList">
+            <h3 className='appSubtitle'>Monitoring</h3>
             {result}
         </div>
     );

@@ -7,7 +7,7 @@ function App() {
   console.log('state = ', state)
 return (
   <div className="App">
-    <h1>Amazon Price Tracker V2</h1>
+    <h1 className='appTitle'>Amazon Price Tracker</h1>
     <AsinList asinList={state.asin} dataList={state.data} changeAsinVisibleFn={changeAsinVisible}/>
   </div>
 );

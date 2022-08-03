@@ -1,18 +1,22 @@
 import './AsinListItem.scss';
 import PriceAnalysis from '../PriceAnalysis/PriceAnalysis';
 
-function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray, changeAsinVisibleFn}) {
-    const isBuyNow = asinDesiredPrice >= asinCurrentPrice
+function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray, changeAsinVisibleFn }) {
     return (
         <div className="AsinListItem">
-            {isBuyNow && <a className='buyNowText' href={asinFullUrl}><h2>Buy Now!</h2></a>}
-            <a href={asinFullUrl}>{asinName}</a>
             <img src={asinImageUrl} className='image'></img>
-            <div>ASIN: {asin}</div>
-            <div>Current Price: ${asinCurrentPrice}</div>
-            <div>Target Price: ${asinDesiredPrice}</div>
-            <div>Last updated: {asinLastUpdate}</div>
-            <PriceAnalysis asinArray={asinArray} changeAsinVisibleFn={changeAsinVisibleFn}/>
+            <div className='asin'>{asin}</div>
+            <div className='asinName'>{asinName}</div>
+            <div className='priceInfoContainer'>
+                <div className='currentPrice'>Current<br></br>${asinCurrentPrice}</div>
+                <div className='targetPrice'>Target<br></br>${asinDesiredPrice}</div>
+            </div>
+            <div className='lastUpdatedDate'>{asinLastUpdate}</div>
+            <div className='buttonContainer'>
+                <button className='priceAnalysisBtn'>Price Analysis</button>
+                <button className='BuyBtn' href={asinFullUrl} >DO NOT BUY</button>
+            </div>
+            {/* <PriceAnalysis asinArray={asinArray} changeAsinVisibleFn={changeAsinVisibleFn} /> */}
         </div>
     );
 }
