@@ -1,16 +1,147 @@
-.AsinListItem{
+.AsinListItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
+    border-style: none;
+    border-radius: 20px;
+    background-color: white;
+    padding: 16px;
+    margin-bottom: 16px;
 }
 
-.buyNowText{
-    background-color: #4CAF50;
-    color: white;
-    width: 100%;
-    margin-bottom: 10px;
+.image {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
 }
-.image{
-    max-width: 250px;
+
+.asin {
+    display: flex;
+    align-items: flex-start;
+    font-weight: 900;
+    font-size: 25px;
+    width: 100%;
+    color: black;
+}
+
+.asinName {
+    display: flex;
+    font-weight: 500;
+    font-size: 12px;
+    color: #7A7A7A;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.priceAnalysisBtn {
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px 12px 16px;
+    border: none;
+    color: #5D57C6;
+    background-color: white;
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 14px;
+    max-width: 120px;
+}
+
+.BuyBtn {
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px 12px 16px;
+    border: none;
+    color: white;
+    background-color: #5D57C6;
+    background-image: linear-gradient(to right, #4776E6, #8E54E9);
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 14px;
+    max-width: 120px;
+    box-shadow: 0px 4px 4px rgba(95, 86, 255, 0.25);
+}
+
+.BuyBtn:hover {
+    background-image: linear-gradient(to right, #385eb6, #8E54E9);
+}
+
+.priceInfoContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 8px 8px 0px 8px;
+}
+
+.currentPrice {
+    display: flex;
+    justify-content: flex-end;
+    color: #5D57C6;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 8px;
+    width: 50%;
+}
+
+.targetPrice {
+    display: flex;
+    justify-content: flex-start;
+    color: #5D57C6;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 8px;
+    width: 50%;
+}
+
+.lastUpdatedDate {
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+@media only screen and (min-width: 375px) {
+    .BuyBtn {
+        width: 120px;
+    }
+
+    .priceAnalysisBtn {
+        width: 120px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .AsinListItem {
+        flex-direction: row;
+    }
+
+    .buttonContainer {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .AsinListItem {
+        flex-direction: row;
+        max-width: 929px;
+    }
+
+    .buttonContainer {
+        justify-content: center;
+    }
+
+    .allInfoContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .image {
+        max-width: 125px;
+    }
 }

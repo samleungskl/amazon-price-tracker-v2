@@ -1,26 +1,32 @@
 .App {
-  text-align: center;
+  text-align: start;
+  padding: 48px 16px 48px 16px;
 }
 
-
-// Inspired by airtable link color
-a {
-  font-weight: 600;
-  text-decoration:none;
+.appTitle {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
 }
 
-a:link {
-  color: #2d7ff9;
-}
+a:link { text-decoration: none; }
 
-a:visited {
-  color: #2d7ff9;
-}
 
-a:hover {
-  color: #054ebb;
-}
+a:visited { text-decoration: none; }
 
-a:active {
-  color: #2d7ff9;
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+@media only screen and (min-width: 768px) {
+  .App {
+    padding: 72px 48px 72px 48px;
+  }
+
+  .appTitle {
+    font-size: 30px;
+  }
+
 }

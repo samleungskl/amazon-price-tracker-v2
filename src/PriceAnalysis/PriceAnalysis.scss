@@ -1,9 +1,82 @@
-.PriceAnalysis{
+.PriceAnalysis {
     display: flex;
     flex-direction: column;
 }
 
-.priceAnaylsisBtn{
+.backButton {
+    background-color: white;
+    color: #5D57C6;
+    padding: 5px 10px 5px 10px;
+    width: 120px;
+    font-size: 14px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.priceAnaylsisBtn {
     color: #2d7ff9;
     font-size: large;
+}
+
+.tabButton {
+    background-color: #5D57C6;
+    color: white;
+    padding: 12px 16px 12px 16px;
+    width: 90px;
+    font-size: 14px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+    margin: 8px;
+}
+
+.tabButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.LineChartContainer {
+    background-color: white;
+    border: solid;
+    border-radius: 20px;
+    border-width: 10px;
+    border-color: white;
+    max-width: 900px;
+    height: 400px;
+    width: 80vw;
+    min-width: 256px;
+}
+
+.asinNameFromAnalysis {
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    max-width: 900px;
+    width: 80vw;
+    margin: 8px;
+}
+
+.asinNumFromAnalysis {
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 8px;
+}
+
+.asinCreatedDateFromAnalysis{
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 8px;
+}
+
+.asinLastUpdateDateFromAnalysis{
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 8px;
 }

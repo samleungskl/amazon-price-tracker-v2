@@ -1,0 +1,26 @@
+.AnalysisCard {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    width: 150px;
+    border-radius: 20px;
+    margin: 8px;
+    padding: 8px 0px 8px 0px;
+}
+
+.analysisCardTitle {
+    color: #727272;
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.analysisCardValue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 23px;
+    color: #000000;
+}
