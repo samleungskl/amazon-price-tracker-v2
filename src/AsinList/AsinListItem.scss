@@ -51,7 +51,7 @@
     border-radius: 12px;
     font-weight: 900;
     font-size: 14px;
-    width: 140px;
+    max-width: 120px;
 }
 
 .BuyBtn {
@@ -65,12 +65,12 @@
     border-radius: 12px;
     font-weight: 900;
     font-size: 14px;
-    width: 140px;
+    max-width: 120px;
     box-shadow: 0px 4px 4px rgba(95, 86, 255, 0.25);
 }
 
-.BuyBtn:hover{
-    background-image: linear-gradient(to right, #385eb6, #6c40b1);
+.BuyBtn:hover {
+    background-image: linear-gradient(to right, #385eb6, #8E54E9);
 }
 
 .priceInfoContainer {
@@ -106,6 +106,15 @@
     font-size: 12px;
     margin-bottom: 8px;
 }
+@media only screen and (min-width: 375px) {
+    .BuyBtn {
+        width: 120px;
+    }
+
+    .priceAnalysisBtn {
+        width: 120px;
+    }
+}
 
 @media only screen and (min-width: 768px) {
     .AsinListItem {
@@ -126,10 +135,12 @@
     .buttonContainer {
         justify-content: center;
     }
+
     .allInfoContainer {
         display: flex;
         flex-direction: row;
     }
+
     .image {
         max-width: 125px;
     }
