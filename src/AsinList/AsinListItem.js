@@ -1,11 +1,10 @@
 import './AsinListItem.scss';
-import PriceAnalysis from '../PriceAnalysis/PriceAnalysis';
 
 function AsinListItem({ asin, asinCurrentPrice, asinDesiredPrice, asinFullUrl, asinImageUrl, asinLastUpdate, asinName, asinArray, changeAsinVisibleFn, changeValueFn }) {
     const isBuyNow = asinDesiredPrice >= asinCurrentPrice
     return (
         <div className="AsinListItem">
-            <img src={asinImageUrl} className='image'></img>
+            <img src={asinImageUrl} className='image' alt={asin}></img>
             <div className='allInfoContainer'>
                 <div className='asinContainer'>
                     <a className='asin' href={asinFullUrl}>{asin}</a>
