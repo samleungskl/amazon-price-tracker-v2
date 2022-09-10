@@ -11,7 +11,8 @@ const getAmazonData = require('./helpers/rapidApi/rapidApiGetData')
 
 const handler = async function (event, context) {
     try {
-        const res = await fetch('https://samskleung-amazon-tracker.netlify.app/.netlify/functions/data')
+        const res = await fetch('https://samleung-amazonpricetracker.netlify.app/.netlify/functions/data')
+        console.log('res = ', res)
         const result = await res.json()
         console.log('result = ', result)
         const amazonJson = await getAmazonData(result.asinArray)
@@ -23,7 +24,7 @@ const handler = async function (event, context) {
         const cleanedAmazonPriceData = await formatPriceData(amazonDataWithAsinUid)
         createData(cleanedAmazonPriceData, 'data')
 
-        const fectchResult = await fetch('https://samskleung-amazon-tracker.netlify.app/.netlify/functions/data')
+        const fectchResult = await fetch('https://samleung-amazonpricetracker.netlify.app/.netlify/functions/data')
         const fectchResultJson = await fectchResult.json()
         const arrayOfMessage = priceNotificationLogic(fectchResultJson.asin)
         console.log('arrayOfMessage = ', arrayOfMessage)
