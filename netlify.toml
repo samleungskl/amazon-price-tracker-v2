@@ -6,7 +6,7 @@
     status = 200
 
 [functions."schedule"]
-schedule = "* * * * *"
+schedule = "0 12 * * *"
 
 [functions]
   node_bundler = "esbuild"
